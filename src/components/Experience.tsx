@@ -1,7 +1,7 @@
+import React from "react";
 
 type Job = { id: number; title: string; description: string; };
-
-const Experience = () => {
+const Experience = React.memo(() => {
   const jobs: Array<Job> = [
     {
       id: 1,
@@ -22,11 +22,11 @@ const Experience = () => {
       <h1 className="text-center text-5xl">Experience </h1>
       <div className=" flex flex-wrap gap-0 md:flex-nowrap md:gap-10">
         <div className="flex-1">
-          {jobs.map((index) => (
-            <div className="relative space-y-1 border-l-2 p-8 text-left">
-              <h3 className="text-xl font-semibold md:text-2xl">Experience {index.id} </h3>
-              <p className="font-light text-lg text-gray-600">{index.title}</p>
-              <p className="text-sm text-gray-600">{index.description}</p>
+          {jobs.map((item, index) => (
+            <div key={index} className="relative space-y-1 border-l-2 p-8 text-left">
+              <h3 className="text-xl font-semibold md:text-2xl">Experience {item.id} </h3>
+              <p className="font-light text-lg text-gray-600">{item.title}</p>
+              <p className="text-sm text-gray-600">{item.description}</p>
               <span className="absolute -left-[11px] top-10 h-5 w-5 rounded-full bg-teal-500"></span>
             </div>
           ))}
@@ -34,6 +34,6 @@ const Experience = () => {
       </div>
     </div>
   )
-}
+});
 
 export default Experience

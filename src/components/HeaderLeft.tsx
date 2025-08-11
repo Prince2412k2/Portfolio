@@ -1,6 +1,7 @@
 import { BiRightArrowAlt, BiHome, BiBriefcase, BiMailSend, BiCode } from "react-icons/bi"
 import "../index.css"
 import type { IconType } from "react-icons"
+import React from "react";
 
 
 const capitalize = (str: string): string => {
@@ -10,11 +11,11 @@ const capitalize = (str: string): string => {
 
 
 
-const HeaderLeft = () => {
+const HeaderLeft = React.memo(() => {
   const headers: Record<string, IconType> = {
     home: BiHome,
     experience: BiBriefcase,
-    project: BiCode,
+    projects: BiCode,
     contact: BiMailSend,
   };
   return (
@@ -31,14 +32,14 @@ const HeaderLeft = () => {
       </div>
       {/* for mobile view */}
       <div className="fixed left-0 right-0 top-0 flex justify-evenly bg-teal-600 p-3 text-white md:hidden">
-        {Object.entries(headers).map(([item, Icon]) => (
-          <a href={`#${item}`} className="flex flex-col items-center justify-center" >
+        {Object.entries(headers).map(([item, Icon], index: number) => (
+          <a key={index} href={`#${item}`} className="flex flex-col items-center justify-center" >
             <Icon className="text-2xl" />
             <span className="text-xs">{capitalize(item)}</span>
           </a>))}
       </div>
     </div >
   )
-}
+});
 
 export default HeaderLeft
