@@ -3,6 +3,7 @@ import Home from "./components/Home"
 import Experience from "./components/Experience"
 import Projects from "./components/Project"
 import Contact from "./components/Contact"
+// import Contributions from "./components/GithubBoard"
 import './index.css'
 function App() {
   return (

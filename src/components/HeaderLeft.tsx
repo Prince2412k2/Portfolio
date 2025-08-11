@@ -30,7 +30,7 @@ const HeaderLeft = () => {
         </ul>
       </div>
       {/* for mobile view */}
-      <div className="fixed left-0 right-0 top-0 flex justify-evenly bg-teal-600 p-5 text-white md:hidden">
+      <div className="fixed left-0 right-0 top-0 flex justify-evenly bg-teal-600 p-3 text-white md:hidden">
         {Object.entries(headers).map(([item, Icon]) => (
           <a href={`#${item}`} className="flex flex-col items-center justify-center" >
             <Icon className="text-2xl" />
