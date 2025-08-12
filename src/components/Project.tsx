@@ -1,43 +1,60 @@
+import type { IconType } from "react-icons";
+import { BiLogoGit, BiLogoGithub, BiLogoPostgresql, BiLogoPython, BiLogoReact } from "react-icons/bi";
 
-type Project = { title: string; techStack: string; description: string; };
+type Project = { title: string; techStack: Array<IconType | string>; description: string; };
 const Project = () => {
+
 
   const projects: Array<Project> = [
     {
-      title: "Project Name",
-      techStack: "TechStack",
-      description: "Description"
+      title: "VCS",
+      techStack: [BiLogoPython],
+      description: "A version control system. Clone of git cli"
     }, {
-      title: "Project Name",
-      techStack: "TechStack",
-      description: "Description"
+      title: "Noter",
+      techStack: [BiLogoPython, BiLogoGit, "curses"],
+      description: "A Tui Note taking app with git intigration for version control"
     }, {
-      title: "Project Name",
-      techStack: "TechStack",
-      description: "Description"
+      title: "Static Site Generator",
+      techStack: [BiLogoPython, BiLogoGithub],
+      description: "Generate Static HTML from Markdown Hosted at github pages"
     }, {
-      title: "Project Name",
-      techStack: "TechStack",
-      description: "Description"
+      title: "Bookish",
+      techStack: [BiLogoReact, BiLogoPython, BiLogoPostgresql, "RAG"],
+      description: "Book reader with context aware word lookup (in progress)"
     }, {
-      title: "Project Name",
-      techStack: "TechStack",
-      description: "Description"
-    }, {
-      title: "Project Name",
-      techStack: "TechStack",
-      description: `DDescriptionDescriptionDescriptionDesc
-      riptionDescriptio`
+      title: "Pyman",
+      techStack: [BiLogoPython, "uv"],
+      description: `Tui python env manger for venv and conda (in progress)`
     }
-  ]
+    , {
+      title: "GreenRoute",
+      techStack: [BiLogoReact, BiLogoPython],
+      description: "Co2 emmissions Calculator for given vehicle type for given route"
+    }]
   return (
-    <div id="projects" className="min-h-screen w-full flex flex-col items-center justify-center gap-20 p-10 md:p-16 px-32">
+    <div
+      id="projects"
+      className="min-h-screen w-full flex flex-col items-center justify-center gap-20 p-10 md:p-16 px-32"
+    >
+
       <h1 className="text-center text-5xl font-light">Projects</h1>
       <div className=" grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5">
+
         {projects.map((item, index) => (
-          <div key={index} className="text-left space-y-2 border-2 hover:scale-105 transition-all duration-200 cursor-pointer px-8 py-10 border-teal-500 rounded-lg hover:bg-teal-50">
+          <div
+            key={index}
+            className="text-left space-y-2 border-2 hover:scale-105 transition-all duration-200 cursor-pointer px-8 py-10 border-teal-500 rounded-lg hover:bg-teal-50"
+          >
             <h1 className="text-3xl font-semibold">{item.title}</h1>
-            <h3 className="text-xl text-gray-700">{item.techStack}</h3>
+            <div className="flex space-x-0.5" >
+              {item.techStack.map((Tech, index) => typeof Tech === "function" ? (
+                <Tech key={index} className="text-2xl " />
+              ) : (
+                <span className="text-sm text-gray-500" >({Tech})</span>
+              )
+              )}
+            </div>
             <p className="text-sm text-gray-600">{item.description}</p>
           </div>))}
       </div>

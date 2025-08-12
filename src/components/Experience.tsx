@@ -1,20 +1,20 @@
 import React from "react";
 
-type Job = { id: number; title: string; description: string; };
+type Job = { title: string; place: string; description: string; };
 const Experience = React.memo(() => {
   const jobs: Array<Job> = [
     {
-      id: 1,
-      title: "Job Title",
-      description: "Description"
+      title: "B.tech (AI-ML)",
+      place: "Silver Oak University",
+      description: `Passed out in may 2025 with 9.1 GPA`
     }, {
-      id: 2,
-      title: "Job Title",
-      description: "Description"
+      title: "ML-AI Intern",
+      place: "Innoventa Technologies",
+      description: "Developed a GenAi Book reading app that generates Picturebooks and Audiobooks"
     }, {
-      id: 3,
-      title: "Job Title",
-      description: "Description"
+      title: "AI-ML Accociate",
+      place: "Gateway Corp",
+      description: "Currently here"
     }
   ]
   return (
@@ -24,8 +24,8 @@ const Experience = React.memo(() => {
         <div className="flex-1">
           {jobs.map((item, index) => (
             <div key={index} className="relative space-y-1 border-l-2 p-8 text-left">
-              <h3 className="text-xl font-semibold md:text-2xl">Experience {item.id} </h3>
-              <p className="font-light text-lg text-gray-600">{item.title}</p>
+              <h3 className="text-xl font-semibold md:text-2xl">{item.title}</h3>
+              <p className="font-light text-lg text-gray-600">{item.place}</p>
               <p className="text-sm text-gray-600">{item.description}</p>
               <span className="absolute -left-[11px] top-10 h-5 w-5 rounded-full bg-teal-500"></span>
             </div>
