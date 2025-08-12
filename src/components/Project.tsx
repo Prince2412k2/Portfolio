@@ -46,12 +46,12 @@ const Project = () => {
             key={index}
             className="text-left space-y-2 border-2 hover:scale-105 transition-all duration-200 cursor-pointer px-8 py-10 border-teal-500 rounded-lg hover:bg-teal-50"
           >
-            <h1 className="text-3xl font-semibold">{item.title}</h1>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold ">{item.title}</h1>
             <div className="flex space-x-0.5" >
-              {item.techStack.map((Tech, index) => typeof Tech === "function" ? (
-                <Tech key={index} className="text-2xl " />
+              {item.techStack.map((Tech, indexb) => typeof Tech === "function" ? (
+                <Tech key={indexb} className="text-2xl " />
               ) : (
-                <span className="text-sm text-gray-500" >({Tech})</span>
+                <span key={indexb} className="text-sm text-gray-500" >({Tech})</span>
               )
               )}
             </div>
