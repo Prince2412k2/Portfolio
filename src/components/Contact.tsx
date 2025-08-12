@@ -1,5 +1,4 @@
 import React from "react"
-import { useForm, type UseFormRegisterReturn } from "react-hook-form"
 const Contact = React.memo(() => {
 
   const fields: Record<string, string> = {
@@ -7,48 +6,24 @@ const Contact = React.memo(() => {
     "Phone Number": "tel",
     "Email Id": "email",
   }
-  const { register, handleSubmit, } = useForm()
-
-
-  const onSubmit = (data: any) => {
-    alert("Form submited")
-    console.log(data);
+  const pattern: Record<string, Array<string>> = {
+    "text": ["^[a-zA-Z ]+$", "No special Character or Numbers allowed"],
+    "tel": ["^\\+?\\d+$", "Only digits and plus sign allowed"],
+    "email": ["^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$", "follow the 'example@provider.com'"]
   }
-
-  const onError = (error: any) => {
-    let msg = ""
-    if (error.email) { msg += "Wrong Email Format\n" }
-    if (error.phone) { msg += "Wrong Phone number format\n" }
-    msg += "\n Please Add correct format"
-    alert(msg);
-  };
-
-  const maper: Record<string, UseFormRegisterReturn> = {
-    tel: register("phone", {
-      required: "Phone number is required",
-      pattern: {
-        value: /^\+?\d{10,15}$/,
-        message: "Invalid phone number format",
-      },
-    }),
-    email: register("email", {
-      required: "Email is required",
-      pattern: {
-        value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-        message: "Please enter a valid email address",
-      },
-    }),
-  };
   return (
     <div id="contact" className="flex min-h-screen w-full flex-col items-center justify-center gap-16 p-8" >
-      <h1 className=" text-center text-6xl font-light text-teal-600">Get in Touch</h1>
-      <form id="Contact" onSubmit={handleSubmit(onSubmit, onError)} className="flex w-full max-w-md flex-col gap-8 rounded-lg p-6 md:max-w-lg lg:max-w-xl">
+      <h1 className=" text-center text-6xl font-light ">Get in Touch</h1>
+      <form id="Contact" onSubmit={() => console.log("Submmited")} className="flex w-full max-w-md flex-col gap-8 rounded-lg p-6 md:max-w-lg lg:max-w-xl">
         <div className="flex flex-col gap-4">
           {Object.entries(fields).map(([tag, _type], index) => (
             <input
+              title={pattern[_type][1]}
               key={index}
               type={_type}
-              {...maper[_type]}
+              required
+              pattern={pattern[_type][0]}
+
               placeholder={tag}
               className="rounded-lg border-2 border-teal-400 px-4 py-3 text-lg outline-none transition-all duration-200 hover:bg-teal-50  focus:ring-2 focus:ring-teal-500 " />
           ))}
