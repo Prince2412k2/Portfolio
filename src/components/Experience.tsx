@@ -6,7 +6,7 @@ const Experience = React.memo(() => {
     {
       title: "B.tech (AI-ML)",
       place: "Silver Oak University",
-      description: `Passed out in May 2025 with 9.1 GPA`
+      description: `Graduated at May 2025 with 9.1 GPA`
     }, {
       title: "ML-AI Intern",
       place: "Innoventa Technologies",
@@ -14,7 +14,7 @@ const Experience = React.memo(() => {
     }, {
       title: "AI-ML Associate",
       place: "Gateway Corp",
-      description: "Currently here"
+      description: "Curently at, Since 2025 "
     }
   ]
   return (

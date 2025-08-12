@@ -15,7 +15,7 @@ const Project = () => {
       techStack: [BiLogoPython, BiLogoGit, "curses"],
       description: "A Tui Note taking app with git integration for version control"
     }, {
-      title: "Static Site Generator",
+      title: "Site Generator",
       techStack: [BiLogoPython, BiLogoGithub],
       description: "Generate Static HTML from Markdown Hosted at github pages"
     }, {
@@ -35,7 +35,7 @@ const Project = () => {
   return (
     <div
       id="projects"
-      className="min-h-screen w-full flex flex-col items-center justify-center gap-20 p-10 md:p-16 px-32"
+      className="min-h-screen w-full flex flex-col items-center justify-center gap-20 p-10 md:p-16 px-16"
     >
 
       <h1 className="text-center text-5xl font-light">Projects</h1>
