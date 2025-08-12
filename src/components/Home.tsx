@@ -6,8 +6,7 @@ import React from "react"
 const Home = React.memo(() => {
   const name: string = "Prince Patel"
   const role: string = "Software Developer"
-  const description: string = `You will catch me putting 2 days 
-    into developing a tool that will save me 2 secconds and 4 clicks.`
+  const description: string = `You will catch me putting 2 days into developing a tool that will save me 2 seconds and 4 clicks.`
 
   const Links: Record<string, IconType> = {
     "https://github.com/Prince2412k2": BiLogoGithub,

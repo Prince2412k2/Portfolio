@@ -9,11 +9,11 @@ const Project = () => {
     {
       title: "VCS",
       techStack: [BiLogoPython],
-      description: "A version control system. Clone of git cli"
+      description: "A version control system.Clone of Git CLI."
     }, {
       title: "Noter",
       techStack: [BiLogoPython, BiLogoGit, "curses"],
-      description: "A Tui Note taking app with git intigration for version control"
+      description: "A Tui Note taking app with git integration for version control"
     }, {
       title: "Static Site Generator",
       techStack: [BiLogoPython, BiLogoGithub],
@@ -25,12 +25,12 @@ const Project = () => {
     }, {
       title: "Pyman",
       techStack: [BiLogoPython, "uv"],
-      description: `Tui python env manger for venv and conda (in progress)`
+      description: `A TUI note-taking app with Git integration for version control.`
     }
     , {
       title: "GreenRoute",
       techStack: [BiLogoReact, BiLogoPython],
-      description: "Co2 emmissions Calculator for given vehicle type for given route"
+      description: "CO2 emissions calculator for given vehicle type for given route"
     }]
   return (
     <div
