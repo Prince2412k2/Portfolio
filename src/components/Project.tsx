@@ -26,7 +26,8 @@ const Project = () => {
     }, {
       title: "Project Name",
       techStack: "TechStack",
-      description: "Description"
+      description: `DDescriptionDescriptionDescriptionDesc
+      riptionDescriptio`
     }
   ]
   return (
