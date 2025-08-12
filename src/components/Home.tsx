@@ -1,5 +1,5 @@
 import { BiLogoGithub, BiLogoLinkedin } from "react-icons/bi"
-import image from "/src/assets/user.png"
+import image from "/src/assets/user.webp"
 import type { IconType } from "react-icons"
 import React from "react"
 
@@ -16,7 +16,7 @@ const Home = React.memo(() => {
   return (
     <div id="home" className="flex min-h-screen w-full items-center justify-center">
       <div className="flex flex-col items-center justify-center gap-8 p-5 text-center">
-        <img src={image} loading="lazy" alt="user" className="w-[250px] sm:w-[300px] rounded-full" />
+        <img src={image} loading="lazy" alt="user" className="w-[300px] sm:w-[300px] rounded-full scale-105" />
         <div className="space-y-1 sm:space-y-3">
           <h1 className="bg-gradient-to-r from-teal-400 to-teal-600 bg-clip-text text-4xl font-semibold text-transparent md:text-5x1 lg:text-6xl">{name}</h1>
           <h3 className="bg-gradient-to-r from-teal-400 to-teal-600 bg-clip-text text-xl font-semibold text-transparent md:text-2x1 lg:text-3xl">{role}</h3>
