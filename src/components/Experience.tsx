@@ -27,7 +27,7 @@ const Experience = React.memo(() => {
               <h3 className="text-xl font-semibold md:text-2xl">{item.title}</h3>
               <p className="font-light text-lg text-gray-600">{item.place}</p>
               <p className="text-sm text-gray-600">{item.description}</p>
-              <span className="absolute -left-[11px] top-10 h-5 w-5 rounded-full bg-teal-500"></span>
+              <span className="absolute -left-[11px] top-10 h-5 w-5 rounded-full bg-emerald-500"></span>
             </div>
           ))}
         </div>

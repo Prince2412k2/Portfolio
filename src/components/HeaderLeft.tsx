@@ -20,7 +20,7 @@ const HeaderLeft = React.memo(() => {
   };
   return (
     <div className="md:flex-[1]">
-      <div className="min-h-screen top-0 hidden md:sticky md:flex items-center justify-center bg-teal-600 text-white">
+      <div className="min-h-screen top-0 hidden md:sticky md:flex items-center justify-center bg-emerald-600 text-white">
         <ul className="flex flex-col gap-10">
           {Object.entries(headers).map(([item, _]) => (
             <li key={item} className="flex items-center justify-start cursor-pointer font-medium transition-all duration-200 group sm:text:lg md:text-xl xl:text-3x1">
@@ -31,7 +31,7 @@ const HeaderLeft = React.memo(() => {
         </ul>
       </div>
       {/* for mobile view */}
-      <div className="fixed left-0 right-0 top-0 flex z-10 justify-evenly bg-teal-600 p-3 text-white md:hidden">
+      <div className="fixed left-0 right-0 top-0 flex z-10 justify-evenly bg-emerald-600 p-3 text-white md:hidden">
         {Object.entries(headers).map(([item, Icon], index: number) => (
           <a key={index} href={`#${item}`} className="flex flex-col items-center justify-center" >
             <Icon className="text-2xl" />
