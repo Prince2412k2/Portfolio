@@ -17,17 +17,24 @@ const Home = React.memo(() => {
       <div className="flex flex-col items-center justify-center gap-8 p-5 text-center">
         <img src={image} loading="lazy" alt="user" className="w-[300px] sm:w-[300px] rounded-full scale-105" />
         <div className="space-y-1 sm:space-y-3">
-          <h1 className="bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-4xl font-semibold text-transparent md:text-5x1 lg:text-6xl">{name}</h1>
-          <h3 className="bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-xl font-semibold text-transparent md:text-2x1 lg:text-3xl">{role}</h3>
-          <p className="max-w-[500] text-sm text-gray-500">{description}</p>
+          <h1 className="bg-gradient-to-r from-teal-400 to-teal-600 dark:from-stone-50 dark:to-stone-400 bg-clip-text text-4xl font-semibold text-transparent md:text-5x1 lg:text-6xl">{name}</h1>
+          <h3 className="bg-gradient-to-r from-teal-400 to-teal-600 dark:from-stone-50 dark:to-stone-400 bg-clip-text text-xl font-semibold text-transparent md:text-2x1 lg:text-3xl">{role}</h3>
+          <p className="max-w-[500] text-sm text-white">{description}</p>
         </div>
         <div className="flex gap-3">
 
           {Object.entries(Links).map(([link, Icon], index: number) => (
             <a aria-label={link} key={index} href={link} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center justify-center" >
               <Icon className="h-10 w-10 
-            cursor-pointer rounded-full border-2 border-transparent bg-emerald-600 p-2 text-white transition-all duration-200 
-            hover:scale-110 hover:border-emerald-600 hover:bg-white hover:text-emerald-600 md:h-12 md:w-12"/>
+            cursor-pointer rounded-full border-2 border-transparent bg-teal-600 dark:bg-black p-2 text-white transition-all duration-200 
+            hover:scale-110
+            hover:border-teal-600
+            dark:hover:border-white
+            hover:bg-white
+            dark:hover:bg-black
+            hover:text-teal-600
+            dark:hover:text-white
+            md:h-12 md:w-12"/>
             </a>
           ))}
         </div>

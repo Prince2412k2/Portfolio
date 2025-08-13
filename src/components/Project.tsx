@@ -50,7 +50,7 @@ const Project = () => {
           <a
             key={index}
             href={item.link} target="_blank" rel="noopener noreferrer"
-            className="text-left space-y-2 border-2 hover:scale-105 transition-all duration-200 cursor-pointer px-8 py-10 border-emerald-500 rounded-lg hover:bg-emerald-50"
+            className="text-left space-y-2 border-2 hover:scale-105 transition-all duration-200 cursor-pointer px-8 py-10 border-teal-500 rounded-lg hover:bg-teal-50"
           >
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold ">{item.title}</h1>
             <div className="flex space-x-0.5" >

@@ -8,7 +8,7 @@ import './index.css'
 function App() {
   return (
     <>
-      <div className="flex min-h-screen w-full subpixel-antialiased">
+      <div className="flex min-h-screen w-full subpixel-antialiased dark:bg-stone-900">
         <HeaderLeft />
         <main className="flex-[3]">
           <Home />
