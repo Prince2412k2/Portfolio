@@ -13,7 +13,7 @@ const Contact = React.memo(() => {
   }
   return (
     <div id="contact" className="flex min-h-screen w-full flex-col items-center justify-center gap-16 p-8" >
-      <h1 className=" text-center text-6xl font-light ">Get in Touch</h1>
+      <h1 className=" text-center text-6xl font-light text-teal-600">Get in Touch</h1>
       <form id="Contact" onSubmit={() => console.log("Submmited")} className="flex w-full max-w-md flex-col gap-8 rounded-lg p-6 md:max-w-lg lg:max-w-xl">
         <div className="flex flex-col gap-4">
           {Object.entries(fields).map(([tag, _type], index) => (

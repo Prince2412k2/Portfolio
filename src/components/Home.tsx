@@ -24,7 +24,7 @@ const Home = React.memo(() => {
         <div className="flex gap-3">
 
           {Object.entries(Links).map(([link, Icon], index: number) => (
-            <a key={index} href={link} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center justify-center" >
+            <a aria-label={link} key={index} href={link} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center justify-center" >
               <Icon className="h-10 w-10 
             cursor-pointer rounded-full border-2 border-transparent bg-teal-600 p-2 text-white transition-all duration-200 
             hover:scale-110 hover:border-teal-600 hover:bg-white hover:text-teal-600 md:h-12 md:w-12"/>
