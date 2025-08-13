@@ -1,36 +1,41 @@
 import type { IconType } from "react-icons";
 import { BiLogoGit, BiLogoGithub, BiLogoPostgresql, BiLogoPython, BiLogoReact } from "react-icons/bi";
 
-type Project = { title: string; techStack: Array<IconType | string>; description: string; };
+type Project = { title: string; techStack: Array<IconType | string>; description: string; link: string };
 const Project = () => {
-
 
   const projects: Array<Project> = [
     {
       title: "VCS",
       techStack: [BiLogoPython],
-      description: "A version control system.Clone of Git CLI."
+      description: "A version control system.Clone of Git CLI.",
+      link: "https://github.com/Prince2412k2/vcs.git",
     }, {
       title: "Noter",
       techStack: [BiLogoPython, BiLogoGit, "curses"],
-      description: "A Tui Note taking app with git integration for version control"
+      description: "A Tui Note taking app with git integration for version control",
+      link: "https://github.com/Prince2412k2/Noter.git",
     }, {
       title: "Site Generator",
       techStack: [BiLogoPython, BiLogoGithub],
-      description: "Generate Static HTML from Markdown Hosted at github pages"
+      description: "Generate Static HTML from Markdown Hosted at github pages",
+      link: "https://github.com/Prince2412k2/static_site_gen.git",
     }, {
       title: "Bookish",
       techStack: [BiLogoReact, BiLogoPython, BiLogoPostgresql, "RAG"],
-      description: "Book reader with context aware word lookup (in progress)"
+      description: "Book reader with context aware word lookup (in progress)",
+      link: "https://github.com/Prince2412k2/Bookish.git",
     }, {
       title: "Pyman",
       techStack: [BiLogoPython, "uv"],
-      description: `A TUI note-taking app with Git integration for version control.`
+      description: `A TUI note-taking app with Git integration for version control.`,
+      link: "https://github.com/Prince2412k2/Pyman.git",
     }
     , {
       title: "GreenRoute",
       techStack: [BiLogoReact, BiLogoPython],
-      description: "CO2 emissions calculator for given vehicle type for given route"
+      description: "CO2 emissions calculator for given vehicle type for given route",
+      link: "https://github.com/Prince2412k2/GreenRoute.git",
     }]
   return (
     <div
@@ -42,8 +47,9 @@ const Project = () => {
       <div className=" grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5">
 
         {projects.map((item, index) => (
-          <div
+          <a
             key={index}
+            href={item.link} target="_blank" rel="noopener noreferrer"
             className="text-left space-y-2 border-2 hover:scale-105 transition-all duration-200 cursor-pointer px-8 py-10 border-teal-500 rounded-lg hover:bg-teal-50"
           >
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold ">{item.title}</h1>
@@ -56,7 +62,7 @@ const Project = () => {
               )}
             </div>
             <p className="text-sm text-gray-600">{item.description}</p>
-          </div>))}
+          </a>))}
       </div>
     </div>
   )
