@@ -2,6 +2,7 @@ import { BiLogoGithub, BiLogoLinkedin } from "react-icons/bi"
 import image from "/src/assets/user.webp"
 import type { IconType } from "react-icons"
 import React from "react"
+import { IoDocumentAttach } from "react-icons/io5";
 
 const Home = React.memo(() => {
   const name: string = "Prince Patel"
@@ -11,6 +12,7 @@ const Home = React.memo(() => {
   const Links: Record<string, IconType> = {
     "https://github.com/Prince2412k2": BiLogoGithub,
     "https://www.linkedin.com/in/prince2412k2": BiLogoLinkedin,
+    "https://prince2412k2.github.io/Resume/resume.pdf": IoDocumentAttach
   };
   return (
     <div id="home" className="flex min-h-screen w-full items-center justify-center">
