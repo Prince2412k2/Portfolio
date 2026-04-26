@@ -8,12 +8,20 @@ export const SOCIAL = {
 };
 
 export const EXPERIENCE = [
+    {
+    title: 'SDE-1',
+    place: 'Gateway Corp',
+    description: 'Building AI-Powered sites',
+    period: '2026 - present',
+    active: true,
+  }
+  ,
   {
     title: 'AI-ML Associate',
     place: 'Gateway Corp',
     description: 'Building AI-driven developer tooling and internal infrastructure.',
-    period: '2025 — present',
-    active: true,
+    period: '2025',
+    active: false,
   },
   {
     title: 'ML-AI Intern',
